@@ -8,13 +8,18 @@ adb devices
 adb -s 设备id  
 
 安装和卸载  
-adb install yourpackagename  参数 install -r 重新安装该程序，保存数据 -s 安装在SD卡内，而不是设备内部存储 -l 锁定该程序
-adb uninstll yourpackagename  参数 -k 不删除数据和缓存  
+adb install yourpackagename  参数 install -r 重新安装该程序，保存数据 -s 安装在SD卡内，而不是设备内部存储 -l锁定该程序  
+adb uninstll yourpackagename  参数 -k 不删除数据和缓存    
 
 设备信息  
 adb shell getprop  
 然后根据需要自己再取就可以了  
 
+#cd system/sd/data //进入系统内指定文件夹  
+#ls //列表显示当前文件夹内容   
+#rm -r xxx //删除名字为xxx的文件夹及其里面的所有文件   
+#rm xxx //删除文件xxx   
+#rmdir xxx //删除xxx的文件夹  
 
 
 
@@ -54,6 +59,18 @@ adb pull 手机路径 电脑路径
 
 8.获取root权限  
 adb shell su
+
+9.开启viewserver  
+检验一台手机是否开启了View Server的办法为：  
+adb shell service call window 3  
+若返回值是：Result: Parcel(00000000 00000000 '........')" 说明View Server处于关闭状态  
+若返回值是：Result: Parcel(00000000 00000001 '........')" 说明View Server处于开启状态  
+
+若是一台可以打开View Server的手机（Android开发版手机 、模拟器or   按照本帖步骤给系统打补丁的手机），我们可以使用以下命令打开View Server：  
+adb shell service call window 1 i32 4939  
+使用以下命令关闭View Server：  
+adb shell service call window 2 i32 4939  
+   
 
 
 
