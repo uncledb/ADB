@@ -14,7 +14,7 @@ adb uninstall com.your.packagename
 3.使用adb截图 - 可封bat 一键截图  
 adb shell /system/bin/screencap -p /sdcard/screenshot.png（保存到SDCard）
 adb pull /sdcard/screenshot.png d:/screenshot.png（保存到电脑）
----bat---
+---bat---  
 for /f "tokens=2,*" %%i in ('reg query "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders" /v   "Desktop"') do (  
 set desk=%%j  
 )  
