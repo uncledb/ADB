@@ -1,8 +1,22 @@
 # ADB
 
-0.安装和卸载  
+基础：  
+设备列表  
+adb devices  
+  
+选择某个设备时  
+adb -s 设备id  
+
+安装和卸载  
 adb install yourpackagename  参数 install -r 重新安装该程序，保存数据 -s 安装在SD卡内，而不是设备内部存储 -l 锁定该程序
-adb uninstll yourpackagename  参数 -k 不删除数据和缓存
+adb uninstll yourpackagename  参数 -k 不删除数据和缓存  
+
+设备信息  
+adb shell getprop  
+然后根据需要自己再取就可以了  
+
+
+
 
 1.获得当前的Activity  
 adb shell dumpsys activity top | findstr ACTIVITY  
@@ -30,4 +44,17 @@ echo adb pull /sdcard/screenshot.png C:/Users/admin/Desktop/screenshot.png
 5.adb端口冲突怎么办?  
 netstat -aon|findstr "5037"   找出pid  
 kill 'pid'  
+
+6.命令窗口显示logcat  
+adb logcat -s 标签名  
+
+7.文件操作  
+adb push 电脑路径 手机路径  
+adb pull 手机路径 电脑路径  
+
+8.获取root权限  
+adb shell su
+
+
+
 
