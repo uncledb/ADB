@@ -12,8 +12,8 @@ adb shell pm clear com.your.packagename
 adb uninstall com.your.packagename  
 
 3.使用adb截图 - 可封bat 一键截图  
-adb shell /system/bin/screencap -p /sdcard/screenshot.png（保存到SDCard）
-adb pull /sdcard/screenshot.png d:/screenshot.png（保存到电脑）
+adb shell /system/bin/screencap -p /sdcard/screenshot.png（保存到SDCard）  
+adb pull /sdcard/screenshot.png d:/screenshot.png（保存到电脑）  
 ---bat---  
 for /f "tokens=2,*" %%i in ('reg query "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders" /v   "Desktop"') do (  
 set desk=%%j  
@@ -28,6 +28,6 @@ echo adb pull /sdcard/screenshot.png C:/Users/admin/Desktop/screenshot.png
 2).使用top命令 adb shell top |grep packagename>/addressu.txt 来获取  
 
 5.adb端口冲突怎么办?  
-netstat -aon|findstr "5037"   找出pid
+netstat -aon|findstr "5037"   找出pid  
 kill 'pid'  
 
