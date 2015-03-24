@@ -14,14 +14,14 @@ adb uninstall com.your.packagename
 3.使用adb截图 - 可封bat 一键截图  
 adb shell /system/bin/screencap -p /sdcard/screenshot.png（保存到SDCard）
 adb pull /sdcard/screenshot.png d:/screenshot.png（保存到电脑）
-#bat---------------------------------------------------------------------
+---bat---
 for /f "tokens=2,*" %%i in ('reg query "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders" /v   "Desktop"') do (  
 set desk=%%j  
 )  
 adb shell /system/bin/screencap -p /sdcard/screenshot.png  
 adb pull /sdcard/screenshot.png %desk%/screenshot.png  
 echo adb pull /sdcard/screenshot.png C:/Users/admin/Desktop/screenshot.png  
-#bat---------------------------------------------------------------------
+
 
 4.检测CPU  
 1).使用android提供的adb shell dumpsys cpuinfo |grep packagename >/addressu.txt来获取  
