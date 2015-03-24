@@ -15,11 +15,11 @@ adb uninstll yourpackagename  参数 -k 不删除数据和缓存
 adb shell getprop  
 然后根据需要自己再取就可以了  
 
-#cd system/sd/data //进入系统内指定文件夹  
-#ls //列表显示当前文件夹内容   
-#rm -r xxx //删除名字为xxx的文件夹及其里面的所有文件   
-#rm xxx //删除文件xxx   
-#rmdir xxx //删除xxx的文件夹  
+cd system/sd/data //进入系统内指定文件夹  
+ls //列表显示当前文件夹内容   
+rm -r xxx //删除名字为xxx的文件夹及其里面的所有文件   
+rm xxx //删除文件xxx   
+rmdir xxx //删除xxx的文件夹  
 
 
 
@@ -70,6 +70,18 @@ adb shell service call window 3
 adb shell service call window 1 i32 4939  
 使用以下命令关闭View Server：  
 adb shell service call window 2 i32 4939  
+
+
+另：aapt经常用到的  
+aapt d[ump] [--values] WHAT file.{apk} [asset [asset ...]]  
+   badging          Print the label and icon for the app declared in APK.  
+   permissions      Print the permissions from the APK.  
+   resources        Print the resource table from the APK.  
+   configurations   Print the configurations in the APK.  
+   xmltree          Print the compiled xmls in the given assets.  
+   xmlstrings       Print the strings of the given compiled xml assets.  
+
+
    
 
 
