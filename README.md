@@ -56,7 +56,15 @@ adb logcat -s 标签名
 7.文件操作  
 adb push 电脑路径 手机路径  
 adb pull 手机路径 电脑路径  
-
+删除：  
+adb shell   
+#su   
+#cd system/sd/data //进入系统内指定文件夹    
+#ls //列表显示当前文件夹内容   
+#rm -r xxx //删除名字为xxx的文件夹及其里面的所有文件   
+#rm xxx //删除文件xxx   
+#rmdir xxx //删除xxx的文件夹  
+  
 8.获取root权限  
 adb shell su
 
